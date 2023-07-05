@@ -1,0 +1,44 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <main>
+        <AuthorizeView>
+            <Authorized>
+                <div class="top-bar ">
+                  
+                        <div class="top-bar-container">
+                            <div class="top-icon-container">
+                                <div class="top-icon">
+                                <i class="fa-solid fa-camera-retro"></i>
+                                </div>
+                       
+                            </div>
+                            <div class="menu-container">
+                                <NavMenu />
+                            </div>
+                        </div>
+                        <div>
+                            <ProfileMenu @ref="_profileMenu" ImgSrc="@imgSrc">
+                     
+                                <ProfileMenuItem>
+                                    <div class="user-menu-option" @onclick="LogOutClick">
+                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                        <label>Cerrar sesión</label>
+                                    </div>
+                                </ProfileMenuItem>
+                               
+                      
+                            </ProfileMenu>
+                        </div>
+
+                 
+
+
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

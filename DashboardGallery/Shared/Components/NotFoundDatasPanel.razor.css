@@ -1,0 +1,21 @@
+﻿.not-found-panel-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin-top: 15px;
+}
+.not-found-img-container{
+    max-width:250px;
+}
+
+.not-found-image{
+    width:100%;
+}
+
+.not-found-tittle{
+    font-weight:bold;
+    font-size:2em;
+}

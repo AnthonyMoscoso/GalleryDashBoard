@@ -1,0 +1,83 @@
+﻿.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group__label {
+    display: block;
+    position: absolute;
+    top: 0;
+    line-height: 40px;
+    color: #aaa;
+    left: 5px;
+    padding: 0 5px;
+    transition: line-height 200ms ease-in-out, font-size 200ms ease-in-out, top 200ms ease-in-out;
+    pointer-events: none;
+    color: var(--borderColor);
+}
+.input-group__label {
+    color: var(--textborderColor) !important;
+}
+.input-group__input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--textborderColor);
+    border-radius: 3px;
+    padding: 0 10px;
+}
+
+    .input-group__input:not(:-moz-placeholder-shown) + label {
+        background-color: white;
+        line-height: 10px;
+        opacity: 1;
+        font-size: 10px;
+        top: -5px;
+    }
+
+    .input-group__input:not(:-ms-input-placeholder) + label {
+        background-color: white;
+        line-height: 10px;
+        opacity: 1;
+        font-size: 10px;
+        top: -5px;
+    }
+
+    .input-group__input:not(:placeholder-shown) + label, .input-group__input:focus + label {
+        background-color: white;
+        line-height: 10px;
+        opacity: 1;
+        font-size: 10px;
+        top: -5px;
+    }
+
+    .input-group__input:focus {
+        outline: none;
+        border: 1px solid var(--JumpingTextboxBorderColor);
+        box-shadow: 0 0 0.2em var(--JumpingTextboxBorderColor);
+    }
+
+        .input-group__input:focus + label {
+            color: var(--JumpingTextboxBorderColor);
+       
+            
+        }
+
+.lb-error {
+    color: red;
+    width: 100%;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 13px;
+    font-weight:bold;
+}
+.error-container {
+    display: flex;
+    text-align: right;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.jumping-input-container {
+    display: flex;
+    flex-direction: column;
+}

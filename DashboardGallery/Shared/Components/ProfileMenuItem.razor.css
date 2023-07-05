@@ -1,0 +1,8 @@
+﻿.menu-item {
+    padding-left: 10px;
+    
+}
+
+.menu-item:hover{
+    background-color:lightgray;
+}

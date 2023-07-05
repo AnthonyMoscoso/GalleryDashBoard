@@ -1,0 +1,14 @@
+﻿<Modal @ref="modalRef" Class="loading-modal" Style="@StyleModelContent">
+        <div class="loading-modal-container">
+            @if (!string.IsNullOrWhiteSpace(_title))
+            {
+                <div class="loading-modal-header">
+                    <h1 class="loading-modal-tittle" style="--tittleColor:@_config.ModalMessageColor">@_title</h1>
+                </div>
+            }
+      
+            <div class="loading-modal-body">
+                <img class="modal-img" src="@_config.ImageUrl" />
+            </div>
+        </div>
+</Modal>

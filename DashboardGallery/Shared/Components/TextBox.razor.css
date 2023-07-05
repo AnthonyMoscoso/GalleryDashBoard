@@ -1,0 +1,32 @@
+﻿.text-box {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--inputBorderColor);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    .text-box:focus, .text-box:active {
+        border: 1px solid var(--inputBorderColor) !important;
+        outline: none;
+        box-shadow: 0 0 0 0.1em var(--boxShandonwColor);
+    }
+
+
+.lb-error {
+    color: red;
+    width: 100%;
+    padding-right: 10px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.error-container {
+    display: flex;
+    text-align: left;
+    width: 100%;
+
+}

@@ -1,0 +1,10 @@
+﻿<div class="jumping-input-container">
+    <div class="input-group @CssClass" style="@Style">
+        <input class="input-group__input"  @oninput="OnValueChange" value="@Text" maxlength="@MaxLenghtText" type="@Type" autofocus="@Autofocus" readonly="@IsReadOnly" disabled="@Disable" name="@Name" id="@Id" autocomplete="off" required />
+        <label class="input-group__label">@Tittle</label>
+    </div>
+
+    <div class="error-container">
+        <label class="lb-error">@_errorMessage</label>
+    </div>
+</div>

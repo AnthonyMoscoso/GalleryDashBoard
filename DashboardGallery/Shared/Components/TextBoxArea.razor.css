@@ -1,0 +1,25 @@
+﻿.textarea-wrapper {
+    position: relative;
+    display: inline-block;
+    min-height: 50px; /* Tamaño mínimo del textarea */
+    max-height: 200px; /* Tamaño máximo del textarea */
+
+    width: 100%;
+
+}
+
+    .textarea-wrapper textarea {
+        width: 100%;
+        min-height: inherit;
+        max-height: inherit;
+        resize: none; /* Evita que el usuario cambie el tamaño */
+        box-sizing: border-box;
+        border: 1px solid #ced4da;
+        padding : 12px 20px;
+        border-radius:4px;
+    }
+.textarea-bottom{
+    display:flex;
+    justify-content:end;
+    padding-right:5px;
+}

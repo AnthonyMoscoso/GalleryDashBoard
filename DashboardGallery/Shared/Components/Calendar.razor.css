@@ -1,0 +1,68 @@
+﻿.previous-month-day {
+    color: gray;
+}
+.btn-month{
+    background-color:transparent;
+    border:0px;
+}
+.day-of-week {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.day-of-month{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    border:1px solid transparent;
+
+
+}
+    .day-of-month label{
+        margin:0px;
+        font-size:0.8em;
+        padding:6px;
+        width:25px;
+        height:25px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border:1px solid transparent;
+    }
+        .day-of-month label:hover {
+            border: 1px solid var(--calendarHoverColor);
+            background-color: var(--calendarHoverColor);
+            color: white;
+        }
+        .next-month-day {
+            color: gray;
+        }
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+.calendar-week {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.calendar-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.selected-date label {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+}
+    .selected-date label:hover {
+        background-color: red !important;
+        color: white;
+        font-weight: bold;
+        border: 1px solid transparent;
+    }

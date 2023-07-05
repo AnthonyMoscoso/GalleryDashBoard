@@ -1,0 +1,60 @@
+﻿@using Bsn.Utilities.Constants;
+<div class="pagination-container">
+    <ul class="pagination">
+        <li class="page-item" @onclick="Previous" disabled="!@IsPageNavigationDisabled(Literals!.Previous)">
+            <button class="page-link" aria-label="@Literals!.Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">@Literals!.Previous</span>
+            </button>
+        </li>
+        @if (int.Parse(CurrentPage) > 3)
+        {
+            <li class="page-item">
+                <button class="page-link" @onclick="(() =>SetActive(1.ToString()))">1</button>
+            </li>
+            @if (int.Parse(CurrentPage) > 4)
+            {
+                <li class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+            }
+        }
+        @{
+            int startIndex = Math.Max(1, int.Parse(CurrentPage) - 1);
+            int endIndex = Math.Min(PageItems, int.Parse(CurrentPage) + 1);
+            if (int.Parse(CurrentPage) > 3 && endIndex - startIndex == 1)
+            {
+                startIndex = Math.Max(1, endIndex - 2);
+            }
+            else if (int.Parse(CurrentPage) < PageItems - 2 && endIndex - startIndex == 1)
+            {
+                endIndex = Math.Min(PageItems, startIndex + 2);
+            }
+        }
+        @for (var i = startIndex; i <= endIndex; i++)
+        {
+            var pageNumberAsString = i.ToString();
+            <li class="page-item @(IsActive(pageNumberAsString) ? Constant.active : string.Empty)">
+                <button class="page-link" @onclick="(() =>SetActive(pageNumberAsString))">@pageNumberAsString</button>
+            </li>
+        }
+        @if (int.Parse(CurrentPage) < PageItems - 2)
+        {
+            @if (int.Parse(CurrentPage) < PageItems - 3)
+            {
+                <li class="page-item disabled">
+                    <button class="page-link">...</button>
+                </li>
+            }
+            <li class="page-item">
+                <button class="page-link" @onclick="(() =>SetActive(PageItems.ToString()))">@PageItems</button>
+            </li>
+        }
+        <li class="page-item" @onclick="Next" disabled="!@IsPageNavigationDisabled(Literals!.Next)">
+            <button class="page-link" aria-label="@Literals!.Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">@Literals!.Next</span>
+            </button>
+        </li>
+    </ul>
+</div>

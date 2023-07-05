@@ -1,0 +1,21 @@
+﻿
+<Modal @ref="modalRef" Class="custom-modal-content" IsFullScreen="false" Style="@StyleModelContent">
+        <div class="custom-modal-container">
+            <div class="custom-modal-header">
+                <img class="modal-img" src="@_questionMessageBoxConfig.ImageUrl" />
+            </div>
+            <div class="custom-modal-body">
+                <div >
+                    <h2 class="custom-modal-tittle" style="--tittleColor:@_questionMessageBoxConfig.TitleColor">@_tittle</h2>
+                </div>
+                <div class="custom-modal-body-content">
+                    <p class="custom-modal-message">@_message</p>
+                </div>
+            </div>
+            <div class="custom-modal-footer">
+                <button class="custom-modal-button first-button" style="--firstButtonColor:@_questionMessageBoxConfig.FirstButtonColor" @onclick="OnFirstOptionClicked">@firstOption</button>
+                <button class="custom-modal-button second-button" style="--secondButtonColor:@_questionMessageBoxConfig.SecondButtonColor" @onclick="OnSecondOptionClicked">@secondOption</button>
+            </div>
+        </div>
+
+</Modal>

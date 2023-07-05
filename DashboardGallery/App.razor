@@ -1,0 +1,42 @@
+﻿
+<LiteralsManager>
+    <LoadingHandler>
+    <MessageHandler>
+        <ErrorHandler>
+            <Router AppAssembly="@typeof(App).Assembly">
+                <Found Context="routeData">
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                        <Authorizing>
+                            <div>
+                                <label class="title autorizing-message " >Authorizing</label>
+                                <label class="subtitle"></label>
+                            </div>
+                        </Authorizing>
+                        <NotAuthorized>
+                            @if (context.User.Identity?.IsAuthenticated != true)
+                            {
+                                <RedirectToLogin></RedirectToLogin>
+                            }
+                            else
+                            {
+
+                            }
+                        </NotAuthorized>
+                        <Authorizing>
+                            <p>Authenticating...</p>
+                        </Authorizing>
+                    </AuthorizeRouteView>
+                    <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+
+                </Found>
+                <NotFound>
+                    <PageTitle>Not found</PageTitle>
+                    <LayoutView Layout="@typeof(MainLayout)">
+                        <p role="alert">Sorry, there's nothing at this address.</p>
+                    </LayoutView>
+                </NotFound>
+            </Router>
+        </ErrorHandler>
+    </MessageHandler>
+    </LoadingHandler>
+</LiteralsManager>

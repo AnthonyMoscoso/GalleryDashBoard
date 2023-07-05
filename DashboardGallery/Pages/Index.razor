@@ -1,0 +1,61 @@
+﻿@layout MainLayout
+@page "/"
+
+@using Model.Dto;
+
+
+
+<AuthenticationStateDisplay>
+    <PageTitle>Index</PageTitle>
+    <div class="page-top">
+        <div class="filters-container">
+            <div>
+                <SearchBox OnTextChanged="OnSearchTxtChanged"> 
+
+                </SearchBox>
+            </div>
+
+        </div>
+        <div class="button-container">
+            <button class="principal-button" @onclick="OnAddImageClick">@Literals!.AddAlbum</button>
+        </div>
+    </div>
+    <div class="page-body">
+
+
+        @if (_items != null && _items.Any())
+        {
+            <div class="section-body datas-albums">
+
+
+                <div class="cart-containers">
+                    @foreach (var item in _items)
+                    {
+                        string _image = string.IsNullOrWhiteSpace(item.UrlCover) ? PlaceholderUrls.Size400 : item.UrlCover;
+                        <ItemNameAdapter Image="@_image" Name="@item.Name" OnEditClicked="GetItemEdit" OnViewClicked="GetAlbumToSee" OnDeleteClicked="OnDeleteItemClicked" Item="item" SubText="@item.TotalItems.ToString()">
+
+                        </ItemNameAdapter>
+                    }
+                </div>
+
+
+            </div>
+
+
+        }
+
+
+    </div>
+    <div class="page-footer">
+        @if (HaveMoreImages)
+        {
+            <div class="btn-principal" @onclick="ChargeMoreDatasClicked">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        }
+
+    </div>
+    <QuestionMessageBox @ref="_questionMessageBox" OptionFirstClicked="OnFirstOptionClicked"></QuestionMessageBox>
+    <AlbumModal @ref="_modal" SendItem="GetItemToSave" SendStep="GetStep" RemoveImage="GetImageToRemove" OnSuccessAddImages="OnSuccessAddImages"></AlbumModal>
+
+</AuthenticationStateDisplay>

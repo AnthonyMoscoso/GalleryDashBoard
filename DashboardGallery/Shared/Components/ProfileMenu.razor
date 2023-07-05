@@ -1,0 +1,12 @@
+﻿<div class="user-menu @Class">
+    <img src="@ImgSrc" alt="Foto de usuario" @onclick="ToggleUserMenu" />
+    <div class="user-menu-content" style="display: @userMenuDisplay">
+        <!-- Contenido del menú desplegable -->
+        <ul>
+            @ChildContent
+        </ul>
+    </div>
+</div>
+
+
+

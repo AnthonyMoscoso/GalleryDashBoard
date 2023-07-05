@@ -1,0 +1,42 @@
+﻿@layout EmptyLayout
+@page "/Login"
+
+
+<div class="page-container">
+    <div class="page-login-left">
+        <div class="page-login-img-container">
+           
+        </div>
+    </div>
+    <div class="page-login-rigth">
+        <div class="auth-form">
+            <div class="auth-form-top">
+                <label class="auth-form-tittle">
+                    @Literals!.Login
+                </label>
+            </div>
+            <div class="form-body auth-body">
+
+                <TextBox @ref="_txtEmail" Placeholder="Email" BoxShandonwColor="palevioletred"  Autofocus OnTextChanged="OnTxtEmailChanged" OnKeyDown="OnKeyDown">
+
+                </TextBox>
+                <TextBox @ref="_txtPassword" Placeholder="Password" BoxShandonwColor="palevioletred" Role="Shared.Components.Enums.TextRole.Password" OnTextChanged="OnTxtPassChanged" OnKeyDown="OnKeyDown">
+
+                </TextBox>
+            </div>
+            <div class="form-bottom auth-bottom">
+                <div class="auth-sign-container">
+                    <button class="principal-button" disabled="@isBtnDisabled" @onclick="OnLoginClicked"> SIGN IN </button>
+                </div>
+                <div class="auth-error">
+                    <label class="lb-warning">@_errorMessage</label>
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+

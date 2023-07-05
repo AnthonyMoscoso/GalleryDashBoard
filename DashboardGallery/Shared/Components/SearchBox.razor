@@ -1,0 +1,5 @@
+﻿<div class="search-box @Css" style="--focusColor:@FocusColor">
+    <button class="search-button" @onclick="Search"><i class="fa fa-search"></i></button>
+    <input type="text" placeholder="@PlaceHolder" @bind-value="searchTerm" autofocus="@Autofocus" @oninput="OnValueChanged" @onkeydown="OnKeyDown" />
+    <button class="clear-button" @onclick="ClearSearch" hidden="@hiddenClear"><i class="fa fa-times"></i></button>
+</div>

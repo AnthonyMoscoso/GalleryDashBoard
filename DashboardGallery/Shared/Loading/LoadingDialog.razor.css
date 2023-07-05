@@ -1,0 +1,31 @@
+﻿.loading-modal-header {
+    display: flex;
+    justify-content: center;
+}
+.loading-modal-container{
+    padding:20px;
+}
+
+.loading-modal-body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.modal-img{
+    width:75%;
+}
+
+.loading-modal-tittle {
+    color: var(--tittleColor);
+    font-weight:bold;
+}
+.loading-modal {
+    border: var(--borderSizeLoadingModal) solid !important;
+    border-color: var(--borderLoadingModalColor) !important;
+    background-color: var(--backgroundLoadingModalColor) !important;
+    border-radius: var(--borderRadiusLoadingModal) !important;
+    padding: 10px;
+}

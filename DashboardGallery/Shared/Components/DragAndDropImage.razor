@@ -1,0 +1,13 @@
+﻿<TooltipButton OnDeleteClicked="Reset" OnEditClicked="UploadFile" Width="@Width">
+    <div class="image-container" style="--height: @Height;--width: @Width" hidden="@HiddenImage">
+        <img class="img-drop" src="@FileData" style="--width: @Width; --height: @Height;" >
+    </div>
+</TooltipButton>
+
+<div @ref="dropZoneElement" class="drop-zone" ondrop="@(async () => await OnDrop())" ondragover="event.preventDefault()" hidden="@isPreviewFileCharge" style="--width: @Width; --height: @Height;">
+    <label class="lb-text" @onclick="UploadFile">Upload file</label>
+    <i class="fa-solid fa-cloud-arrow-up Icon-drop fa-lg" style="--dragAndDropImageSize:@IconSize"></i>
+    <InputFile id="@idInput" OnChange="@OnChange" accept="@GetAcceptsFormat()" @ref="inputFile" hidden="true" />
+</div>
+
+

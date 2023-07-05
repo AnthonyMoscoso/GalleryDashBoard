@@ -1,0 +1,73 @@
+﻿@layout MainLayout
+@page "/albums/{idAlbum}"
+
+@using Model.Dto;
+
+
+
+<AuthenticationStateDisplay>
+    @if (_album!= null)
+    {
+        <PageTitle>Index</PageTitle>
+        <div class="page-top album-top">
+            <div class="page-top-tittle album-header">
+                <i class="fa-solid fa-arrow-left" @onclick="GoBack"></i>
+                <label class="album-name">@_album.Name</label>
+            </div>
+            <div class="page-top-container">
+                <div class="filters-container">
+                    <div>
+                        <SearchBox OnTextChanged="OnSearchTxtChanged">
+
+                        </SearchBox>
+                    </div>
+
+                </div>
+                <div class="button-container">
+                    <button class="principal-button" @onclick="OnAddImagToAlbumeClick">@Literals!.AddImageToAlbum</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="page-body">
+
+
+            @if (_dates != null && _dates.Any())
+            {
+                <div class="section-body datas-images">
+                    @foreach (DateTime date in _dates)
+                    {
+                        <div class="image-datas-container">
+                            <label class="image-date-tittle"> @date.ToLocalTime().ToString("dd MMM yyyy")</label>
+                            <div class="cart-containers">
+
+                                @foreach (ImageFileDto image in GetImagesFromDate(date))
+                                {
+                                    <ItemImageAdapter Image="@image.Url" Item="@image" OnEditClicked="OpenItemToEdit" OnDeleteClicked="OnDeleteImageClick" OnViewClicked="OpenViewImage"></ItemImageAdapter>
+                                }
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+
+
+        </div>
+        <div class="page-footer">
+            @if (HaveMoreImages)
+            {
+                <div class="btn-principal" @onclick="ChargeMoreDatasClicked">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+            }
+
+        </div>
+
+        <QuestionMessageBox @ref="_questionMessageBox" OptionFirstClicked="OnFirstOptionClicked"></QuestionMessageBox>
+        <AddImageModal @ref="_addImageModal" OnSuccessSave="OnSuccessSaveImages"></AddImageModal>
+        <ImageFileModal @ref="_modal" SendItem="GetItemToSave"></ImageFileModal>
+        <PreviewImageModal @ref="ImageModal"></PreviewImageModal>
+    }
+
+</AuthenticationStateDisplay>

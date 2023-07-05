@@ -1,0 +1,47 @@
+﻿<div class="calendar">
+    <div class="calendar-header">
+        <div>
+            <button @onclick="ShowPreviousMonth" class="btn-month">
+                <i class="fa-solid fa-arrow-right fa-rotate-180"></i>
+            </button>
+        </div>
+        <div>
+            <label>@Value.ToLocalTime().ToString("MMMM yyyy")</label>
+        </div>
+        <div>
+            <button @onclick="ShowNextMonth" class="btn-month">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="calendar-week">
+        @foreach (string day in daysOfWeek)
+        {
+            <div class="day-of-week">
+                <label>@day</label>
+            </div>
+        }
+    </div>
+    <div class="calendar-days">
+        @foreach (DateTime day in previousMonthDays)
+        {
+            <div class="day-of-month previous-month-day @SelectedCss(day,day.Day)" style="@Style" @onclick="()=> GetDay(day,day.Day)">
+                <label>@day.Day</label>
+            </div>
+        }
+
+        @foreach (DateTime day in daysOfMonth)
+        {
+            <div class="day-of-month @SelectedCss(day,day.Day)" style="@Style" @onclick="()=> GetDay(day,day.Day)">
+                <label>@day.Day</label>
+            </div>
+        }
+
+        @foreach (DateTime day in nextMonthDays)
+        {
+            <div class="day-of-month next-month-day @SelectedCss(day,day.Day)" style="@Style" @onclick="()=> GetDay(day,day.Day)">
+                <label>@day.Day</label>
+            </div>
+        }
+    </div>
+</div>

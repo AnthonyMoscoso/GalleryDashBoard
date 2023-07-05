@@ -1,0 +1,126 @@
+﻿.modal-form-body {
+    margin-top: 64px;
+}
+.img-drop {
+    height: var(--height);
+    width:  100%;
+    padding: 10px;
+    object-fit: contain;
+}
+::deep .Icon-drop {
+    padding: 20px;
+    font-size: var(--dragAndDropImageSize);
+    color: lightgray;
+    transform: rotate(360deg) scaleX(-1);
+}
+
+
+.drop-zone {
+
+    height: var(--height);
+    width: var(--width);
+    min-height: 100px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+    .drop-zone:hover {
+        border: 2px solid black;
+    }
+        .drop-zone:hover > .Icon-drop {
+            color: black;
+        }
+
+.image-container {
+    padding: 10px;
+    width: 100%;
+    min-height: 100px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-width: var(--width);
+    height: var(--height);
+}
+
+    .image-container:hover {
+        border: 2px solid #0d6806;
+    }
+
+::deep .lb-text {
+    color: lightgray;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+    ::deep .lb-text:hover {
+        color: black;
+    }
+
+::deep .drop-zone .lb-browse {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #F25900;
+    cursor: pointer;
+}
+
+    ::deep .drop-zone .lb-browse:hover {
+        color: black
+    }
+
+::deep .drop-zone .lb-text {
+    margin-bottom: 16px;
+}
+
+::deep .drop-zone .icono-upload {
+    font-size: 88px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.drop-zone-file {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+::deep .lb-file-name {
+    font-weight: 600;
+    color: #F25900;
+}
+
+.circle {
+    height: 24px;
+    width: 24px;
+    border-radius: 90px;
+    border: 1px solid #FFFFFF;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-right: 16px;
+}
+
+.success_circle {
+    background: #15B125;
+    font-size: 20px;
+}
+
+@media screen and (max-width:770px) {
+    ::deep .drop-zone .lb-text {
+        display: none;
+    }
+}

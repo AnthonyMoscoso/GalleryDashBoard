@@ -1,0 +1,11 @@
+﻿<div class="not-found-panel-container" hidden="@Hidden">
+    <div  class="not-found-img-container">
+        <img class="not-found-image" src="@Src" />
+    </div>
+    @if (!string.IsNullOrWhiteSpace(Tittle))
+    {
+        <div class="not-found-tittle-container">
+            <label class="not-found-tittle">@Tittle</label>
+        </div>
+    }
+</div>

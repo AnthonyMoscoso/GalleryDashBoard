@@ -1,0 +1,6 @@
+﻿<div class="textarea-wrapper" style="@Style">
+    <textarea placeholder="@PlaceHolder" @oninput="OnValueChange" @bind="@Text" @onclick="@OnClickHandler" style="@StyleArea" maxlength="@MaxLength"></textarea>
+    <div class="textarea-bottom">
+        <label>@Text.Length/@MaxLength</label>
+    </div>
+</div>

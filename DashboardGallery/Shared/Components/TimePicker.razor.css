@@ -1,0 +1,26 @@
+﻿input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5) grayscale(1) saturate(5) hue-rotate(175deg);
+    font-size:1.0em;
+}
+input[type="time"] {
+    padding: var(--timePickerPadding);
+    border: 1px solid var(--timePickerBorderColor);
+    border-radius: 4px ;
+
+    width: 100%;
+    font-size: 1.0em;
+    background-color: var(--timePickerBackgroundColor);
+}
+
+    input[type="time"]:focus {
+        outline-color: var(--timePickerOutlineColor); /* Cambia el color del borde al hacer clic en el campo */
+    }
+
+    input[type="time"]::-webkit-datetime-edit-hour-field,
+    input[type="time"]::-webkit-datetime-edit-minute-field {
+     
+        color: black; /* Cambia el color del texto a blanco */
+    }
+
+ 
+

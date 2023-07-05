@@ -1,0 +1,13 @@
+﻿
+<div class="select" style="@Style">
+    @if (Items != null)
+    {
+        <select @onchange="SelectItem_ValueChanged" class="@Class" style="@SelectStyle" disabled="@IsDisabled">
+            @foreach (var item in Items)
+            {
+                <option class="@OptionClass" value="@item.Key" selected="@IsSeleted(item)"> @item.Value</option>
+            }
+        </select>
+
+    }
+</div>

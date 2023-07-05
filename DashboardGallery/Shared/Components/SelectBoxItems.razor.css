@@ -1,0 +1,18 @@
+﻿.select-container {
+    border: 1px solid black;
+    width:140px;
+    border-radius:4px;
+    padding:3px;
+    font-weight:bold;
+}
+.lb-select {
+    background-color: white;
+    font-size:0.9em;
+    position: absolute;
+    padding: 0 5px;
+}
+
+
+.select-container:focus-visible {
+    border: none;
+}

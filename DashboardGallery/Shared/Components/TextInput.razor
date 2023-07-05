@@ -1,0 +1,13 @@
+﻿
+        <div class="Dash-form-container @CssClass @DisableCss" @onfocusout="OnFocusOut">
+            <label class="@LabelCss">@Tittle</label>
+            <TextBox Class="Dash-form-input" Id="@Id" Role="@TextRole" ReadOnly="@IsReadOnly" OnClick="TextClick" OnTextChanged="Text_TextChanged" Disabled="@Disable" Autofocus="@Autofocus" Placeholder="@PlaceHolder" Text="@Text" MaxLenght="@MaxLenghtText">
+
+            </TextBox>
+            @if (Role == Enums.TextRole.Password)
+            {
+                <i class="fa-sharp fa-solid @IconName" style="color: #d11ac2;" @onclick="BtnEyeOnClick"></i>
+            }
+
+        </div>
+

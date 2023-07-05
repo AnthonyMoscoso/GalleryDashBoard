@@ -1,0 +1,43 @@
+﻿::deep .form-control.is-invalid{
+    background-image: none;
+}
+.Dash-form-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+::deep .Dash-form-label {
+    position: absolute;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000000;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 14px;
+}
+
+    ::deep .Dash-form-label.Dash-label-move-up {
+        top: 12px;
+        transform: translateY(0)
+    }
+
+::deep .Dash-form-input {
+    padding-top: 32px;
+    height: auto;
+}
+
+    ::deep .Dash-form-input:disabled {
+        background-color: transparent;
+        border: none;
+    }
+
+::deep .Dash-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #F25900;
+    font-size: 22px;
+    cursor: pointer;
+}

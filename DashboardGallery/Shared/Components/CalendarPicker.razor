@@ -1,0 +1,21 @@
+﻿
+<div class="calendar-picker">
+    <div class="calendar-input" style="@Style">
+        <input type="text" @onclick="ToggleCalendar" class="text-box" placeholder="@PlaceHolder" value="@Value?.ToString("dd/MM/yyyy")" style="@Style" />
+        <i class="fa-solid fa-calendar-days calendar-input-icon" @onclick="ToggleCalendar"></i>
+     
+    </div>
+    <div class="error-container">
+        <label class="lb-error">@_errorMessage</label>
+    </div>
+    <div class="calendar-popup" style="display: @Display">
+        <div class="calendar-container">
+            <Calendar OnSelectDate="OnSelectDate"></Calendar>
+            <div class="calendar-buttons-container">
+                <button @onclick="@OnDeleteClick" class="calendar-btn">borrar</button>
+                <button @onclick="@OnTodayClick" class="calendar-btn">hoy</button>
+            </div>
+        </div>
+      
+    </div>
+</div>

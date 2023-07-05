@@ -1,0 +1,56 @@
+﻿@using Model.Dto;
+<Modal @ref="Modal" IsFullScreen="true">
+    <div class="modal-component-form col-lg-10 offset-lg-1">
+        <div class="modal-form-top">
+            <div class="modal-form-tittle">
+                <label class="modal-tittle">@Literals!.AddImageToAlbum</label>
+            </div>
+            <div class="modal-top-close-container">
+                <i class="fa-solid fa-xmark close-button" @onclick="OnCloseClick"></i>
+            </div>
+        </div>
+        <div class="modal-form-body">
+            <div class="modal-body-section-body addimages-data-form">
+
+                @if (_dates != null && _dates.Any())
+                {
+                    <div class="section-body datas-images">
+                        @foreach (DateTime date in _dates)
+                        {
+                            <div class="image-datas-container">
+                                <label class="image-date-tittle"> @date.ToLocalTime().ToString("dd MMM yyyy")</label>
+                                <div class="cart-containers">
+
+                                    @foreach (ImageFileDto image in GetImagesFromDate(date))
+                                    {
+                                        var isDisabled = _imagesFromDbs.FirstOrDefault(w=> w.IdImage ==image.IdImage) != null;
+                                        var isChecked = _checkedItems.FirstOrDefault(w => w.IdImage == image.IdImage) != null || isDisabled;
+                                        <ItemCheckAdapter Check="isChecked" Disabled="isDisabled" OnCheckChanged="GetCheckedValue" Image="@image.Url" Item="@image"></ItemCheckAdapter>
+                                    }
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+            </div>
+            <div class="btn-plus-container">
+                @if (HaveMoreImages)
+                {
+                    <div class="btn-principal" @onclick="ChargeMoreDatasClicked">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                }
+            </div>
+      
+        </div>
+        <div class="modal-form-footer">
+
+            <button class="principal-button" @onclick="BtnSaveOnClick" >@Literals!.Save</button>
+
+
+        </div>
+    </div>
+  
+</Modal>

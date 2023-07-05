@@ -1,0 +1,10 @@
+﻿@if (Items != null)
+{
+        <select @onchange="SelectItem_ValueChanged" class="@Class">
+            @foreach (var item in Items)
+            {
+                <option class="@OptionClass" value="@item.Key" selected="@IsSeleted(item)"> @item.Value</option>
+            }
+        </select>
+
+}

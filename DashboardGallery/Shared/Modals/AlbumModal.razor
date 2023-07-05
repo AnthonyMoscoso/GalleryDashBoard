@@ -1,0 +1,63 @@
+﻿
+<Modal @ref="Modal" IsFullScreen="true">
+    <div class="modal-component-form col-lg-10 offset-lg-1">
+        <div class="modal-form-top">
+            <div class="modal-form-tittle">
+                <label class="modal-tittle">@Tittle</label>
+            </div>
+            <div class="modal-top-close-container">
+                <i class="fa-solid fa-xmark close-button" @onclick="OnCloseClick"></i>
+            </div>
+        </div>
+        <div class="modal-form-body album-modal">
+         
+                <TabPanel Color="@Color.FromHex("#DCDCDB")">
+                    <TabHeaders>
+                        <TabHeader Name="@Literals!.Datas" IsSelected="GetActiveCss(0)" Value="0" OnTabClick="OnTabClick" SelectColor="Color.PaleVioletRed">
+
+                        </TabHeader>
+                    <TabHeader Name="@Literals.Images" IsSelected="GetActiveCss(1)" Value="1" OnTabClick="OnTabClick" SelectColor="Color.PaleVioletRed">
+
+                        </TabHeader>
+                       
+                    </TabHeaders>
+                </TabPanel>
+               
+                    <div class="tab-container tab-datas" hidden="@IsHiddenStepDatas">
+                        <div class="album-datas-text">
+                    <TextBox MaxLenght="30" @ref="_txtName" Text="@_item.Name" Placeholder="@Literals!.Name" OnTextChanged="OnTxtNameChanged"></TextBox>
+                        </div>
+                    </div>
+                    <div class="tab-container tab-datas" hidden="@IsHiddenStepImages">
+                        
+
+                            <div class="button-container">
+                                <button class="principal-button" @onclick="OnAddImage" >@Literals!.AddImage</button>
+                            </div>
+                        
+                <div class="cart-containers">
+
+                            @foreach(var item in _item.Images)
+                            {
+                                <ItemAdapterRemoved Item="item" Image="@item.Url" OnDeleteClicked="OnRemoveImageClicked"></ItemAdapterRemoved>
+                            }
+                </div>
+                    </div>
+              
+
+
+          
+        </div>
+        <div class="modal-form-footer">
+            @if (_step == AlbumModalStep.Datas)
+            {
+                <button class="principal-button" @onclick="BtnSaveOnClick" disabled="@isDisabledSave">@Literals.Save</button>
+            }
+         
+
+
+        </div>
+    </div>
+    <AddImageModal @ref="_modal" OnSuccessSave="OnSuccessSaveImages"></AddImageModal>
+    <QuestionMessageBox @ref="_questionMessageBox" OptionFirstClicked="OnFirstOptionClicked" OptionSecondClicked="OnSecondOptionClicked"></QuestionMessageBox>
+</Modal>

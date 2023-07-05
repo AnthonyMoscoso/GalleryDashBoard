@@ -1,0 +1,54 @@
+﻿.tooltip-element {
+    position: relative;
+    border: 1px solid transparent;
+    min-width: 25px;
+ 
+    width: var(--width);
+    
+}
+
+    .tooltip-element.selected {
+        border: 1px solid #4e8dff;
+    }
+
+.options-panel {
+    position: absolute;
+    z-index: 999;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip-element:focus-within .options-panel {
+    opacity: 1;
+    visibility: visible;
+}
+
+::deep .Icon-button{
+    padding:6px;
+    color: lightgray;
+}
+::deep .Icon-button:hover {
+
+    color: black;
+}
+.tooltip-element img {
+    max-width: 100%;
+}
+
+.tooltip-element button {
+    margin-right: 10px;
+}

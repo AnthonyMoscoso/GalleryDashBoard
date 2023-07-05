@@ -1,0 +1,18 @@
+﻿
+<div class="">
+    <nav class="nav-items">
+        <div class="nav-item" @onclick="@(() => GoTo(LocalPages.Index))">
+            <div class="nav-item-spans">
+                <span class="@GetCssActive(LocalPages.Index)"> @Literals!.Galery</span>
+            </div>
+        </div>
+        <div class="nav-item" @onclick="@(() => GoTo(LocalPages.Images))">
+            <div class="nav-item-spans">
+                <span class="@GetCssActive(LocalPages.Images)"> @Literals!.Images</span>
+            </div>
+        </div>
+
+    </nav>
+</div>
+
+

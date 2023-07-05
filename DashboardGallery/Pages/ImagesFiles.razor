@@ -1,0 +1,57 @@
+﻿@layout MainLayout
+@page "/images"
+@using Model.Dto;
+
+<AuthenticationStateDisplay>
+    <PageTitle>Index</PageTitle>
+    <div class="page-top">
+        <div class="filters-container">
+            <div>
+                <SearchBox OnTextChanged="OnSearchTxtChanged">
+
+                </SearchBox>
+            </div>
+     
+        </div>
+        <div class="button-container">
+            <button class="principal-button" @onclick="OnAddImageClick">@Literals!.AddImage</button>
+        </div>
+    </div>
+    <div class="page-body">
+        
+    
+            @if (_dates != null && _dates.Any())
+            {
+                <div class="section-body datas-images">
+                @foreach (DateTime date in _dates)
+                {
+                    <div class="image-datas-container">
+                    <label class="image-date-tittle"> @date.ToLocalTime().ToString("dd MMM yyyy")</label>
+                    <div class="cart-containers">
+                        
+                            @foreach (ImageFileDto image in GetImagesFromDate(date))
+                            {
+                                <DashboardGallery.Shared.Adapter.ItemImageAdapter Image="@image.Url" Item="@image" OnEditClicked="OpenItemToEdit" OnDeleteClicked="OnDeleteImageClick" OnViewClicked="OpenViewImage" ></DashboardGallery.Shared.Adapter.ItemImageAdapter>
+                            }
+                       
+                    </div>
+                </div>
+                }
+                </div>
+            }
+      
+       
+    </div>
+    <div class="page-footer">
+        @if (HaveMoreImages)
+        {
+            <div class="btn-principal" @onclick="ChargeMoreDatasClicked">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        }
+    
+    </div>
+    <QuestionMessageBox @ref="_questionMessageBox" OptionFirstClicked="OnFirstOptionClicked"></QuestionMessageBox>
+    <ImageFileModal @ref="_modal" SendItem="GetItemToSave"></ImageFileModal>
+    <PreviewImageModal @ref="ImageModal"></PreviewImageModal>
+</AuthenticationStateDisplay>

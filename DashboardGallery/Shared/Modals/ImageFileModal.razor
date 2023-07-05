@@ -1,0 +1,42 @@
+﻿<Modal @ref="Modal" IsFullScreen="true" >
+    <div class="modal-component-form col-lg-10 offset-lg-1">
+        <div class="modal-form-top">
+            <div class="modal-form-tittle">
+                <label class="modal-tittle">@Tittle</label>
+            </div>
+            <div class="modal-top-close-container">
+                <i class="fa-solid fa-xmark close-button" @onclick="OnCloseClick"></i>
+            </div>
+        </div>
+        <div class="modal-form-body">
+            <div class="modal-body-section-body imagesfiles-data-form">
+                <div class="imagesfiles-drag-drop-image">
+                    <DragAndDropImage IconSize="3em"  Width="100%" FileData="@SrcImage" Height="225px" OnValueChanged="OnImageValueChanged" OnDeleteValue="OnDeleteImageValue" Formats="@fileFormats">
+
+                    </DragAndDropImage>
+                </div>
+                <div class="imagesfiles-datas-container">
+                    <div class="imagesfiles-datas-text">
+                        <TextBox MaxLenght="30" @ref="TxtName" Text="@_item.Name" Placeholder="@Literals!.Name" OnTextChanged="OnTxtNameChanged"></TextBox>
+                    </div>
+                    <div class="imagesfiles-datas-note">
+                        
+                           <TextBoxArea MinHeight="200" MaxLength="600" PlaceHolder="@Literals.Description" Text="@_item.Description" OnTextChanged="OnDescriptionChanged" >
+
+                           </TextBoxArea>
+                   
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-form-footer">
+          
+                <button class="principal-button" @onclick="BtnSaveOnClick" disabled="@isDisabledSave">@Literals.Save</button>
+        
+
+        </div>
+    </div>
+    <QuestionMessageBox @ref="_questionMessageBox" OptionFirstClicked="OnFirstOptionClicked" OptionSecondClicked="OnSecondOptionClicked"></QuestionMessageBox>
+</Modal>

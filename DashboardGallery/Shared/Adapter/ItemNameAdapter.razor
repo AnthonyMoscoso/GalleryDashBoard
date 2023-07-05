@@ -1,0 +1,21 @@
+﻿<div class="adapter itemName-adapter" >
+    <div class="adapter-body itemName-body" style="@Style">
+        <div class="adapter-buttons top-adapter">
+            <div class="adapter-icon-container" @onclick="OnBtnPreviewClick">
+                <i class="fa-solid fa-expand"></i>
+            </div>
+            <div class="adapter-icon-container" @onclick="OnBtnEditClick">
+                <i class="fa-solid fa-pen"></i>
+            </div>
+            <div class="adapter-icon-container" @onclick="OnBtnDeleteClick">
+                <i class="fa-solid fa-trash-can"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="adapter-footer">
+        <label class="itemName-name">@Name</label>
+        <label class="itemName-subText">@SubText</label>
+    </div>
+    
+</div>

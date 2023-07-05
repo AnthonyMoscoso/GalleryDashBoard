@@ -1,0 +1,54 @@
+﻿.page-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+
+    align-items: center;
+}
+.page-login-left {
+    width: 50%;
+    display: flex;
+    height: 100vh;
+    background-color: #e6e8e7;
+    justify-content: center;
+    background-image: url("https://media.istockphoto.com/id/520499868/es/foto/joven-fot%C3%B3grafo-observando-a-la-c%C3%A1mara.jpg?s=612x612&w=0&k=20&c=OvgfsnOZJ29w0aF0-UM_9AU2DQWBrAA93LaxkVh0Kfs=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+  
+
+.page-login-img-container {
+    padding: 30px;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-login-img-container img{
+    width:100%;
+}
+
+.page-login-rigth {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.page-login-img-container img{
+    width:100%;
+}
+
+
+
+@media(max-width:1100px) {
+    .page-login-left {
+        display: none;
+    }
+    .page-login-rigth {
+        width: 100%;
+        padding: 40px;
+    }
+}
